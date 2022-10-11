@@ -1,12 +1,11 @@
-package main
+package contas
 
-import "fmt"
+import "banco/clientes"
 
 type ContaCorrente struct {
-	titular    string
-	numAgencia int
-	numConta   int
-	saldo      float64
+	Titular              clientes.Titular
+	NumAgencia, NumConta int
+	saldo                float64
 }
 
 func (c *ContaCorrente) Saque(quantia float64) (string, float64) {
@@ -37,22 +36,6 @@ func (c *ContaCorrente) Transferencia(quantia float64, contaDestino *ContaCorren
 	return "algo deu errado, verifique seu saldo: ", c.saldo
 }
 
-func main() {
-
-	conta2 := ContaCorrente{"Paulo", 111, 222, 20}
-	minhaConta := ContaCorrente{}
-	minhaConta.titular = "Rodrigo"
-	minhaConta.numAgencia = 123321
-	minhaConta.saldo = 10
-
-	result, valorNaConta := conta2.Transferencia(10, &minhaConta)
-	fmt.Println(result, valorNaConta)
-	fmt.Println(conta2.saldo, " ----", minhaConta.saldo)
-
-	testes := teste(1, 22, 33, 4, 256)
-	fmt.Println(testes)
-}
-
-func teste(num ...int) []int {
-	return num
+func (c *ContaCorrente) GetSaldo() float64 {
+	return c.saldo
 }
