@@ -23,7 +23,7 @@ func BuscaProdutos() []Produto {
 		var Nome string
 		var Preco float64
 
-		err = pegaProdutos.Scan(&Id, &Quantidade, &Nome, &Preco)
+		err = pegaProdutos.Scan(&Id, &Nome, &Preco, &Quantidade)
 
 		if err != nil {
 			panic(err.Error())
