@@ -7,7 +7,7 @@ import (
 )
 
 func ConectorBD() *sql.DB {
-	conexao := "user=postgres dbname=teste password=admin host=localhost sslmode=disable"
+	conexao := "user=postgres dbname=teste1 password=2270 host=localhost sslmode=disable"
 	db, err := sql.Open("postgres", conexao)
 
 	if err != nil {

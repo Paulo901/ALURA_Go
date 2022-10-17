@@ -9,6 +9,9 @@ import (
 )
 
 var temp = template.Must(template.ParseGlob("templates/*.html"))
+var id = 2
+
+//apenas porque não está incrementando
 
 func Index(w http.ResponseWriter, r *http.Request) {
 	todosProdutos := models.BuscaProdutos()
@@ -26,12 +29,16 @@ func Insert(w http.ResponseWriter, r *http.Request) {
 		quantidade := r.FormValue("quantidade")
 
 		precoStr, err := strconv.ParseFloat(preco, 64)
+		if err != nil {
+			log.Println("Erro de Formatação", err)
+		}
 		quantidadeStr, err := strconv.Atoi(quantidade)
 
 		if err != nil {
 			log.Println("Erro de Formatação", err)
 		}
-		models.CriandoProdutos(nome, precoStr, quantidadeStr)
+		id++
+		models.CriandoProdutos(id, nome, precoStr, quantidadeStr)
 
 	}
 	http.Redirect(w, r, "/", 301)

@@ -19,19 +19,19 @@ func BuscaProdutos() []Produto {
 	produtos := []Produto{}
 
 	for pegaProdutos.Next() {
-		var Id, Quantidade int
-		var Nome string
-		var Preco float64
+		var id, quantidade int
+		var nome string
+		var preco float64
 
-		err = pegaProdutos.Scan(&Id, &Nome, &Preco, &Quantidade)
+		err = pegaProdutos.Scan(&id, &nome, &preco, &quantidade)
 
 		if err != nil {
 			panic(err.Error())
 		}
-		prod.Id = Id
-		prod.Quantidade = Quantidade
-		prod.Nome = Nome
-		prod.Preco = Preco
+		prod.Id = id
+		prod.Quantidade = quantidade
+		prod.Nome = nome
+		prod.Preco = preco
 
 		produtos = append(produtos, prod)
 
@@ -40,15 +40,15 @@ func BuscaProdutos() []Produto {
 	return produtos
 }
 
-func CriandoProdutos(nome string, preco float64, quantidade int) {
+func CriandoProdutos(id int, nome string, preco float64, quantidade int) {
 
 	db := db.ConectorBD()
 
-	InsereDados, err := db.Prepare("insert into produtos(nome, preco, quantidade) values ($1, $2, $3)")
+	InsereDados, err := db.Prepare("insert into produtos(id, nome, preco, quantidade) values ($1, $2, $3, $4)")
 	if err != nil {
 		panic(err.Error())
 	}
-	InsereDados.Exec(nome, preco, quantidade)
+	InsereDados.Exec(id, nome, preco, quantidade)
 	defer db.Close()
 }
 
