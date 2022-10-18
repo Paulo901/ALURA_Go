@@ -79,7 +79,7 @@ func Update(w http.ResponseWriter, r *http.Request) {
 	http.Redirect(w, r, "/", 301)
 }
 func Edit(w http.ResponseWriter, r *http.Request) {
-	idDoProduto := r.URL.Query().Get("id")
-	produto := models.EditaProduto(idDoProduto)
-	temp.ExecuteTemplate(w, "Edit", produto)
+	//idDoProduto := r.URL.Query().Get("Id")
+	//produto := models.EditaProduto(idDoProduto)
+	temp.ExecuteTemplate(w, "Edit", nil)
 }
