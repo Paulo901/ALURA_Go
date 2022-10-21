@@ -1,8 +1,8 @@
 package routes
 
 import (
+	"3_WEB/controller"
 	"net/http"
-	"web/controller"
 )
 
 func PegaRota() {

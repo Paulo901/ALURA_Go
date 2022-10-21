@@ -1,11 +1,11 @@
 package controller
 
 import (
+	"3_WEB/models"
 	"log"
 	"net/http"
 	"strconv"
 	"text/template"
-	"web/models"
 )
 
 var temp = template.Must(template.ParseGlob("templates/*.html"))

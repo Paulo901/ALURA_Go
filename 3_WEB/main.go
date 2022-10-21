@@ -1,8 +1,8 @@
 package main
 
 import (
+	"3_WEB/routes"
 	"net/http"
-	"web/routes"
 )
 
 func main() {

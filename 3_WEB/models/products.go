@@ -1,6 +1,6 @@
 package models
 
-import "web/db"
+import "3_WEB/db"
 
 type Produto struct {
 	Id, Quantidade int

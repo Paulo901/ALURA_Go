@@ -1,6 +1,6 @@
 package contas
 
-import "banco/clientes"
+import "2_OO/clientes"
 
 type ContaCorrente struct {
 	Titular              clientes.Titular

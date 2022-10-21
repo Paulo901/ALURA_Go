@@ -1,4 +1,4 @@
-module web
+module 3_WEB
 
 go 1.18
 
