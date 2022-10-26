@@ -8,8 +8,8 @@ import (
 func main() {
 
 	models.Personalidades = []models.Personalidade{
-		{Nome: "n1", Historia: "h1"},
-		{Nome: "n2", Historia: "h2"},
+		{Id: 1, Nome: "n1", Historia: "h1"},
+		{Id: 2, Nome: "n2", Historia: "h2"},
 	}
 	routes.HandleRequest()
 }
