@@ -28,3 +28,16 @@ func OnePersonalidade(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 }
+
+func Insert(w http.ResponseWriter, r *http.Request) {
+	if r.Method == "POST" {
+		nome := r.FormValue("Nome")
+		historia := r.FormValue("Historia")
+
+		Id := 1
+		Id++
+		models.Adicionando(Id, nome, historia)
+
+	}
+	http.Redirect(w, r, "/", 301)
+}
