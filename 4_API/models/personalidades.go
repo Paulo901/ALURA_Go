@@ -1,6 +1,6 @@
 package models
 
-import "4_API/db"
+import "4_API/database"
 
 type Personalidade struct {
 	Id       int    `json: "id"`
@@ -11,7 +11,7 @@ type Personalidade struct {
 var Personalidades []Personalidade
 
 func Adicionando(Id int, Nome, Historia string) {
-	db := db.ConectDB()
+	db := database.ConectDB()
 	defer db.Close()
 	InsereDados, err := db.Prepare("insert into personalidades (Id, Nome, Historia) values ($1, $2, $3)")
 	if err != nil {

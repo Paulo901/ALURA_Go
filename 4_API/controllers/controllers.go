@@ -15,6 +15,11 @@ func Home(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "HOME")
 }
 func TodasPersonalidades(w http.ResponseWriter, r *http.Request) {
+	/*
+		com Docker
+		var tp []models.Personalidade
+		database.DB.Find(&tp)
+	*/
 
 	json.NewEncoder(w).Encode(models.Personalidades)
 
