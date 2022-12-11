@@ -1,4 +1,4 @@
-# ALURA_Go
+# go_alura
 Aqui você verá meu progresso com a linguagem Go através dos conhecimentos adquiridos nos cursos da plataforma Alura. Através dos commits, a experiência de entendimento sobre as evoluções 
 pode melhorar
 ## Instalação & Configurando
